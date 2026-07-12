@@ -1,3 +1,7 @@
+output "chaos_studio_targets_id" {
+  description = "Map of id values across all chaos_studio_targets, keyed the same as var.chaos_studio_targets"
+  value       = { for k, v in azurerm_chaos_studio_target.chaos_studio_targets : k => v.id }
+}
 output "chaos_studio_targets_location" {
   description = "Map of location values across all chaos_studio_targets, keyed the same as var.chaos_studio_targets"
   value       = { for k, v in azurerm_chaos_studio_target.chaos_studio_targets : k => v.location }
